@@ -38,6 +38,8 @@ See [CHANGELOG.md](CHANGELOG.md) for the full list.
 
   Until then, please use the export button in the help window (the **?** in the Subscriptions header) to keep your own backup.
 
+- **Drag and drop your own order.** Channels inside a tab are currently always sorted by favourite, status and then alphabetically. The plan is to let you drag a channel to wherever you want it inside its tab, and to keep that order (including in backups and in export / import files). Channels you have not moved would keep the automatic order, and there would be a way to go back to alphabetical.
+
 ## Installation
 
 Download the latest `.xpi` from the [Releases](https://github.com/molitar/youtube-tabs-fixed/releases) page and open it in Firefox. Releases marked "Pre-release" are unsigned builds waiting for Mozilla: they install in Firefox Developer Edition, Nightly or ESR with `xpinstall.signatures.required` set to `false`, or can be loaded temporarily from `about:debugging`. Normal releases are signed by Mozilla and install in regular Firefox.
