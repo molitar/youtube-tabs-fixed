@@ -28,6 +28,16 @@ Your tab data is stored in your browser only. If you clear your browser's data w
 
 See [CHANGELOG.md](CHANGELOG.md) for the full list.
 
+## Planned
+
+- **Protect the tab configuration against loss.** Some users have lost their tabs after an update. The tabs are currently stored only in the YouTube page's own browser storage (`localStorage`), which is shared with the site and can be emptied by clearing site data, cookie-cleaning add-ons, or switching container or profile. The plan is to also keep copies in the extension's own storage, which survives those events:
+  - a **daily backup**, keeping the last several days;
+  - a **backup before every update**;
+  - **automatic restore** when the tabs are found empty but a backup exists, plus a "restore from backup" list in the help window;
+  - a safeguard so an empty configuration never overwrites a good one.
+
+  Until then, please use the export button in the help window (the **?** in the Subscriptions header) to keep your own backup.
+
 ## Installation
 
 Download the latest `.xpi` from the [Releases](https://github.com/molitar/youtube-tabs-fixed/releases) page and open it in Firefox. Releases marked "Pre-release" are unsigned builds waiting for Mozilla: they install in Firefox Developer Edition, Nightly or ESR with `xpinstall.signatures.required` set to `false`, or can be loaded temporarily from `about:debugging`. Normal releases are signed by Mozilla and install in regular Firefox.
