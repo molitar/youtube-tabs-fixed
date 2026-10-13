@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Built packages are attached to GitHub releases, never committed.
+*.xpi
+*.zip
+
+*.tmp
+*.bak
+*.backup-*
+*.part

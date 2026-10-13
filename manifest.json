@@ -1,0 +1,41 @@
+{
+  "name": "Youtube Tabs Fixed",
+  "description": "Organize your YouTube subscriptions into tabs. Support and source: github.com/molitar/youtube-tabs-fixed",
+  "version": "2.0.29",
+  "manifest_version": 2,
+  "author": "molitar",
+  "homepage_url": "https://github.com/molitar/youtube-tabs-fixed",
+  "icons": {
+    "48": "icon-48.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "iro.min.js",
+        "youtube-tabs.js"
+      ],
+      "css": [
+        "tabs.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "help.html",
+    "export.png"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "youtube-tabs-fixed-public@molitar",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ],
+        "optional": []
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Changelog
+
+## 2.0.29 - 2026-10-13
+
+### Fixed
+
+- **Tab panel no longer scrolls past the YouTube header.** The panel is clipped at the header, and the floating action button is hidden while you scroll.
+- **The edit fly-out stays up long enough to use.** The button that opens the menu to edit, rename, recolour or change a channel's link now stays visible for 2.5 seconds after the pointer leaves, instead of a quarter of a second.
+- **The fly-out is no longer hidden behind the video list.** Menus and the new-subscription chooser open above YouTube's layers, are kept inside the window, and no longer vanish when you first click.
+- Assigning a new subscription waits up to 5 seconds for YouTube to list it, then closes the chooser.
+
+### Added
+
+- The add-on's properties page (and the help window) now link to this GitHub page for support.
+
+## 2.0.23
+
+Previous signed release on addons.mozilla.org (no changes recorded here).

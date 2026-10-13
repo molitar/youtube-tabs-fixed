@@ -1,0 +1,1157 @@
+.dark {
+    background-color: #212121 !important;
+}
+
+.dark-menu-item {
+    color: #bbb !important;
+}
+
+#page-manager.modal::after {
+    content: "";
+    position: absolute;
+    z-index: 1990;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fade 0.3s normal forwards ease-in-out;
+}
+
+#guide-content.modal {
+    pointer-events: none;
+}
+
+@keyframes fade {
+    from {background-color: transparent;}
+    to {background-color: rgba(0, 0, 0, 0.5); }
+}
+
+:root {
+    --bg-color: #212121;
+    --bd-color: #555;
+    --bd-color-dark: #323232;
+    --bd-radius: 10px;
+    --bd-radius-small: 5px;
+    --text-color: white;
+    --text-color-dim: #ccc;
+    --highlight: rgba(255, 255, 255, 0.1);
+}
+
+/* Copied from video title styling */
+.ytt-header {
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 500;
+    max-height: 4rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    display: block;
+    -webkit-line-clamp: 2;
+}
+
+.ruler {
+    width: 100%;
+    height: 1px;
+    background-color: var(--yt-spec-10-percent-layer);
+    margin-bottom: 1.5rem;
+}
+
+.poster {
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    left: 35%; top: 25%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border: solid 2px gray;
+    border-radius: 10px;
+    font-size: 14px;
+
+    /* Mozilla Firefox custom scrollbar support */
+    scrollbar-color: #888 #eee; 
+    scrollbar-width: thin;
+} .poster-close {
+    position: sticky;
+    left: calc(100% - 20px);
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url("https://i.imgur.com/RfJCiU9.png");
+    background-size: contain;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+.poster-support {
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(255, 124, 37);
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    border: solid 2px #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+} .poster-support:hover {
+    padding: 5px 12px 5px 12px;
+    background-color: rgb(189, 86, 18);
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.5);
+} .poster-img {
+    max-width: 50%;
+    margin-top: 10px;
+} .poster-header {
+    width: calc(100% - 20px);
+    margin: 10px;
+} .poster-text {
+    width: 80%;
+    padding-left: 10%; padding-right: 10%;
+} .poster-change-notes {
+    text-align: left;
+    width: 75%;
+    margin: auto;
+} .poster-change-notes > p, .poster-change-notes > b {
+    display: block;
+    padding: 8px 0;
+}
+
+.ytt-popup {
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 25%;
+    max-width: 30%;
+    max-height: 75vh;
+    padding: 32px;
+    overflow: auto;
+
+    pointer-events: all;
+    color: var(--yt-spec-text-primary);
+    font-size: 1.4rem;
+    background-color: var(--yt-spec-base-background);
+    border-radius: var(--bd-radius);
+    border: 1px solid var(--yt-spec-10-percent-layer);
+    box-shadow: rgb(0 0 0 / 67%) 500px 0px 500px -500px inset;
+    /* width: 50px;
+    height: 50px; */
+}
+
+.new-badge-popup {
+    min-width: fit-content;
+    overflow: visible;
+} .new-badge-popup .popup-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} .new-badge-popup .badge {
+    max-width: 256px;
+    --paper-item-min-height: 40px;
+} .new-badge-popup .badge-menu {
+    box-shadow: 0 0 16px 1px rgb(0 0 0 / 16%);
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.1s ease-in-out;
+    pointer-events: auto;
+} .btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.menu-input {
+    display: block;
+    height: 16px;
+    margin-top: 16px;
+    padding: 4px;
+    color: white;
+    font-size: 12px;
+    background-color: var(--yt-spec-base-background);
+    border: 1px solid var(--yt-spec-10-percent-layer)
+}
+
+.tab { /* TAB OPEN */
+    position: relative;
+    z-index: 1;
+    height: fit-content;
+    width: 100%;
+    max-height: fit-content;
+
+    margin-left: 0;
+    padding-bottom: 10px;
+    border: 6px solid firebrick;
+    border-bottom-width: 0px;
+    border-right: hidden;
+    border-radius: 30px 20px 0 0;
+    box-sizing: border-box;
+    transition: 0.1s margin-left ease-in-out;
+} .tab:not(:last-of-type)::before { /* Adds extra length to the border to merge with the next tab's border */
+    content: "";
+    width: 6px;
+    height: 30px;
+
+    position: absolute;
+    bottom: -30px;
+    left: -6px;
+
+    border-left: 6px solid;
+    border-color: inherit;
+    box-sizing: border-box;
+    transition: 0.05s 0.05s all ease-in-out;
+} .tab:last-of-type {
+    box-shadow: -2px 6px 6px 0 rgb(0 0 0 / 16%);
+    margin-bottom: 6px;
+    border-bottom-right-radius: 20px;
+} .tab.closed {
+    padding-bottom: 0;
+} .tab.grabbed {
+    margin-left: 4rem;
+} .tab.grabbed::before { /* Remove extra border segment when tab is grabbed */
+    transition: 0.05s all ease-in-out !important;
+    height: 0 !important;
+    bottom: 0 !important;
+} .tab.movedup {
+    animation: 0.8s wobble-hor-bottom both;
+} .tab.moveddown {
+    animation: 0.8s wobble-hor-bottom both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-9-27 23:33:7
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+@keyframes wobble-hor-bottom {
+    0%,
+    100% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateX(-10px) rotate(-1.5deg);
+              transform: translateX(-10px) rotate(-1.5deg);
+    }
+    30% {
+      -webkit-transform: translateX(4px) rotate(1.5deg);
+              transform: translateX(4px) rotate(1.5deg);
+    }
+    45% {
+      -webkit-transform: translateX(-4px) rotate(-1deg);
+              transform: translateX(-4px) rotate(-1deg);
+    }
+    60% {
+      -webkit-transform: translateX(2px) rotate(0.6deg);
+              transform: translateX(2px) rotate(0.6deg);
+    }
+    75% {
+      -webkit-transform: translateX(-1px) rotate(-0.3deg);
+              transform: translateX(-1px) rotate(-0.3deg);
+    }
+}
+  
+.tab-menu {
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: calc(100% - 10px);
+    padding: 10px 0 10px 10px;
+    align-items: center;
+}  .tab-menu-name {
+    display: -webkit-box;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 16px;
+    color: var(--yt-spec-text-primary, var(--text-color, #ffffff)) !important;
+    font-size: 10.5px;
+    line-height: 13px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 26px;
+    user-select: none;
+}
+.tab-menu .hover-zone {
+    position: absolute;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    
+    border-radius: 0 20px 0 0;
+    box-shadow: inset 0 -20px 0 -20px rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.15s ease-in-out;
+} .hover-zone:hover {
+    box-shadow: inset -90px 0 70px -80px rgba(255, 255, 255, 0.3);
+    cursor: grab;
+}
+
+.tab-menu-btn {
+    display: inline-block;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 5px;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    pointer-events: all;
+} .tab-menu-btn:hover {
+    transform: scale(1.2);
+} .edit-back {
+    background-image: url("https://i.imgur.com/E0a4TiR.png");
+} .delete-back {
+    background-image: url("https://i.imgur.com/gpOTTcV.png");
+} .delete-back:hover {
+    background-image: url("https://i.imgur.com/8f7LhS6.png");
+} .expand-arrow {
+    background-image: url("https://i.imgur.com/fEkP1IP.png");
+    transition: all 0.1s ease-in-out;
+} .tab.closed .expand-arrow {
+    transform: rotate(180deg);
+} .tab.closed .expand-arrow:hover {
+    transform: scale(1.2) rotate(180deg);
+} .grab {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+
+    /* The grab button should be slightly larger to be seen under the cursor */
+    height: 24px;
+    width: 24px;
+    margin: 0 8px 0 0;
+
+    user-select: none;
+    opacity: 0;
+    background-image: url("https://i.imgur.com/nXbqXz9.png");
+    transition: all 0.1s ease-in-out;
+} .grab:hover {
+    filter: none;
+    opacity: 1;
+    cursor: grab;
+}
+
+.badge {
+    user-select: none;
+    z-index: 1;
+    width: 100% !important;
+} .badge.ytt-badge-controls-visible > .badge-retractor {
+    width: calc(100% + 36px);
+    border: solid 1px var(--yt-spec-10-percent-layer);
+    background-color: var(--yt-spec-base-background);
+} .badge.ytt-badge-controls-visible > .badge-retractor::after {
+    opacity: 1;
+    visibility: inherit;
+} .badge yt-img-shadow {
+    position: relative;
+} .badge yt-img-shadow {
+    pointer-events: all;
+
+    height: fit-content;
+    width: fit-content;
+    padding: 3px;
+    border: 0 solid white;
+} .badge yt-img-shadow:hover {
+    border: 2px solid white;
+    margin-left: -2px;
+    margin-right: calc(24px - 2px);
+} .badge.favorite yt-img-shadow {
+    border: 3px outset rgb(255, 200, 0);
+    margin-left: -3px;
+    margin-right: calc(24px - 3px);
+}
+
+.badge yt-img-shadow > img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px 2px rgb(0, 0, 0, 50%);
+}
+
+.badge-retractor {
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+
+    background-color: transparent;
+    box-sizing: border-box;
+    border: none; border-top-right-radius: 20px; border-bottom-right-radius: 20px;
+    transition: all 0.2s ease-out;
+} .badge-retractor::after {
+    content: "";
+    visibility: hidden;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    opacity: 0;
+    transition: opacity 0.15s ease 0.1s;
+    background-image: url('https://i.imgur.com/R46R8KY.png');
+    background-position: center;
+    background-size: contain;
+}
+
+.tab.closed .badge {
+    display: none;
+}
+
+.badge-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 128px;
+    height: 192px;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    pointer-events: all;
+    overflow: hidden;
+    z-index: 2147483000 !important;
+
+    border-radius: var(--bd-radius);
+    border: 1px solid var(--yt-spec-10-percent-layer, rgba(255,255,255,0.16));
+    border-left: 1px solid rgb(0 0 0 / 30%);
+    background: #0f0f0f !important;
+    color: #ffffff !important;
+    box-shadow: inset 16px 0 16px -16px rgb(0 0 0 / 20%), 16px 16px 16px -16px rgb(0 0 0 / 20%);
+} .menu-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+    background: #0f0f0f !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid var(--yt-spec-10-percent-layer, rgba(255,255,255,0.16));
+    /* box-shadow: 0 6px 6px 0 #0000005a; */
+} .menu-body {
+    padding: 8px 20px;
+    overflow: auto; overflow-x: hidden;
+    flex-grow: 1;
+    background: #0f0f0f !important;
+    color: #ffffff !important;
+} .badge-menu-btn {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    background-position: center;
+    background-size: contain;
+    border-radius: var(--bd-radius-small);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out
+    /* filter: drop-shadow(0 2px 0px black); */
+} .badge-menu-btn:hover {
+    /* border: 1px solid var(--yt-spec-10-percent-layer); */
+    transform: scale(1.2);
+} .badge-menu-btn.favorite {
+    background-image: url('https://i.imgur.com/RHEXSmp.png');
+} .badge-menu-btn.favorite.filled {
+    background-image: url('https://i.imgur.com/vDfvgLZ.png');
+} .badge-menu-btn.new {
+    background-image: url('https://i.imgur.com/zggQshn.png');
+} .tab-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    padding-left: 28px;
+
+    cursor: pointer;
+    transition: all 0.1s ease;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    color: #ffffff !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+    border: none;
+    /* border-bottom: 1px solid var(--yt-spec-10-percent-layer); */
+} .tab-selector::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    min-height: 8px;
+    min-width: 8px;
+    margin-right: 8px; margin-left: 4px;
+    
+    transition: all 0.1s ease;
+    background-color: var(--color);
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 3px solid var(--bd-color-dark);
+} .tab-selector:hover {
+    font-weight: bold;
+    padding-left: 29px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 4px;
+} .tab-selector:hover::before {
+    min-height: 10px;
+    min-width: 10px;
+    margin-left: 3px;
+    border: 3px solid var(--yt-spec-10-percent-layer);
+}
+
+.sub {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+} ytd-guide-entry-renderer:hover > .sub > .sub-slide {
+    left: 40px;
+}
+
+.sub-slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+
+    background-color: white;
+    box-sizing: border-box;
+    border: solid 1px #ddd;
+    transition: left 0.2s ease-out, background-color 0.1s ease;
+} .sub-slide:hover {
+    background-color: #ddd !important;
+    cursor: pointer;
+}
+
+.sub-cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-color: white;
+    box-shadow: 3px 0 1px -3px white;
+}
+
+.sub-icon, .sub-widget {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    float: right;
+    background-image: url("https://i.imgur.com/RfJCiU9.png");
+    background-size: contain;
+} .sub-widget:hover {
+    cursor: pointer;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    
+    z-index: 2000;
+    text-align: center;
+    overflow-x: hidden;
+
+    padding-top: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    border: solid 1px #ddd;
+    border-radius: 2px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 #eee;
+} .sub-menu:hover {
+    cursor: default;
+}
+
+.menu-link {
+    position: relative;
+    width: calc(100% - 12px);
+    font-size: 11px;
+    color: #444;
+    font-weight: 500;
+    padding: 6px;
+    word-break: break-all;
+    word-break: break-word;
+} .menu-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.create-tab-menu {
+    position: absolute;
+    width: 150px;
+    height: 160px;
+    top: 0px;
+    left: 0px;
+
+    z-index: 1;
+    padding: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    border: solid 1px #ddd;
+    border-radius: 2px;
+}
+
+#create-tab-name {
+    width: calc(100% - 10px);
+}
+
+.create-tab-btn {
+    width: calc(50% - 3px);
+    margin: auto;
+    margin-top: 5px;
+
+    border: solid 1px #ddd;
+    border-radius: 2px;
+}
+
+.badge-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} .badge-header #guide-section-title {
+    width: fit-content;
+} .badge-header-controls {
+    display: flex;
+    padding-right: 20px;
+}
+
+.ytt-subscribe-retractor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 30%;
+    z-index: 0;
+
+    transition: all 0.15s ease-in-out;
+    background-color: transparent;
+    color: transparent;
+    transform: translateZ(-1px);
+    padding: 0 !important;
+} .ytd-subscribe-button-renderer:hover > .ytt-subscribe-retractor,
+#subscribe-button:hover > .ytt-subscribe-retractor {
+    bottom: -70%;
+} .ytd-subscribe-button-renderer:hover > .ytt-subscribe-retractor:before,
+#subscribe-button:hover > .ytt-subscribe-retractor:before {
+    border-radius: 0 0 18px 18px;
+    height: 130%;
+    padding-top: 15%;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+} .ytt-subscribe-retractor:hover::before {
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    cursor: pointer;
+}.ytt-subscribe-retractor::before {
+    content: var(--tabName, "");
+    position: absolute;
+    display: flex;
+    bottom: 0;
+
+    width: 100%;
+    height: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s ease-in-out;
+    overflow: hidden;
+
+    background-color: var(--tabColor);
+    color: var(--textColor, "white");
+    font-size: 14px;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+    border-radius: 22px;
+}
+
+#upload-backup {
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-image: url("https://i.imgur.com/E1U5vJj.png");
+} #upload-backup input {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#export-backup {
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-image: url("https://i.imgur.com/hkamMkk.png");
+}
+
+#close-popup {
+    float: right;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    text-align: center;
+    color: #555;
+    border-radius: 50%;
+    border: 1px solid #555;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+} ::-webkit-scrollbar-track {
+    background: #eee;
+} ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+
+
+/* !! LIGHT THEME !! */
+
+/* Subscribe button */
+#owner .ytd-subscribe-button-renderer button:not([aria-label^="Subscribe"]) {
+    background-color: #2a2a2a !important;
+} #channel-header .ytd-subscribe-button-renderer button:not([aria-label^="Subscribe"]) {
+    background-color: #2a2a2a !important;
+}
+
+.ytt-light-theme #owner .ytd-subscribe-button-renderer button:not([aria-label^="Subscribe"]) {
+    background-color: #F2F3F3 !important;
+} .ytt-light-theme #channel-header .ytd-subscribe-button-renderer button:not([aria-label^="Subscribe"]) {
+    background-color: #F2F3F3 !important;
+}
+
+#owner .ytd-subscribe-button-renderer {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+} #channel-header .ytd-subscribe-button-renderer {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+/* Tab hover zone */
+.ytt-light-theme .hover-zone:hover {
+    box-shadow: inset -90px 0 70px -80px rgba(0, 0, 0, 0.3);
+}
+
+/* YTT Buttons */
+.ytt-light-theme .tab-menu-btn, .ytt-light-theme .badge-menu-btn, .ytt-light-theme .btn, .ytt-light-theme .badge-retractor::after {
+    filter: invert(1);
+}
+
+/* Keep tab labels visible even when YouTube theme variables change. */
+.ytt-light-theme .tab-menu-name {
+    color: var(--yt-spec-text-primary, #0f0f0f) !important;
+}
+
+
+/* YouTube Tabs: native-style sidebar scrollbar mirror.
+   The original extension uses margin-based scrolling, so this small overlay
+   restores the visible/drag-friendly scrollbar without changing the sidebar layout. */
+.ytt-guide-native-scrollbar {
+    position: fixed;
+    width: 12px;
+    min-height: 80px;
+    background: transparent;
+    z-index: 2147483000;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.12s ease;
+}
+
+.ytt-guide-native-scrollbar.visible,
+.ytt-guide-native-scrollbar.dragging {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ytt-guide-native-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 8px;
+    min-height: 42px;
+    border-radius: 999px;
+    background: rgba(170, 170, 170, 0.92);
+    cursor: grab;
+}
+
+.ytt-guide-native-scrollbar-thumb:hover,
+.ytt-guide-native-scrollbar-thumb.dragging {
+    background: rgba(210, 210, 210, 0.96);
+}
+
+.ytt-guide-native-scrollbar-thumb.dragging {
+    cursor: grabbing;
+}
+
+.ytt-light-theme .ytt-guide-native-scrollbar-thumb {
+    background: rgba(95, 95, 95, 0.72);
+}
+
+.ytt-light-theme .ytt-guide-native-scrollbar-thumb:hover,
+.ytt-light-theme .ytt-guide-native-scrollbar-thumb.dragging {
+    background: rgba(70, 70, 70, 0.86);
+}
+
+/* YouTube Tabs fixed: make the About/help popup readable in YouTube dark mode. */
+.ytt-popup .popup-body {
+    color: #f1f1f1 !important;
+}
+.ytt-popup .popup-body h1,
+.ytt-popup .popup-body h2,
+.ytt-popup .popup-body h3,
+.ytt-popup .popup-body h4,
+.ytt-popup .popup-body h5,
+.ytt-popup .popup-body h6,
+.ytt-popup .popup-body p,
+.ytt-popup .popup-body li {
+    color: #f1f1f1 !important;
+}
+.ytt-popup .popup-body a {
+    color: #8ab4f8 !important;
+}
+
+
+/* YouTube Tabs fixed: dynamic light/dark theme support and button tooltips. */
+.ytt-dark-theme .btn,
+.ytt-dark-theme .tab-menu-btn,
+.ytt-dark-theme .badge-menu-btn,
+.ytt-dark-theme .badge-retractor::after {
+    filter: none;
+}
+
+.ytt-light-theme .btn,
+.ytt-light-theme .tab-menu-btn,
+.ytt-light-theme .badge-menu-btn,
+.ytt-light-theme .badge-retractor::after {
+    filter: invert(1) !important;
+}
+
+.ytt-light-theme .btn:hover,
+.ytt-light-theme .tab-menu-btn:hover,
+.ytt-light-theme .badge-menu-btn:hover {
+    filter: invert(1) contrast(1.5) !important;
+}
+
+.ytt-dark-theme .btn:hover,
+.ytt-dark-theme .tab-menu-btn:hover,
+.ytt-dark-theme .badge-menu-btn:hover {
+    filter: contrast(1.4) !important;
+}
+
+.badge-header-controls .btn::after {
+    content: attr(title);
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    z-index: 2147483647;
+    min-width: max-content;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(28, 28, 28, 0.98);
+    color: #f1f1f1;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-2px) scale(0.96);
+    transition: opacity 0.08s ease, transform 0.08s ease, visibility 0.08s ease;
+}
+
+.badge-header-controls .btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.ytt-light-theme .badge-header-controls .btn::after {
+    background: rgba(255, 255, 255, 0.98);
+    color: #0f0f0f;
+    border-color: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ytt-dark-theme .ytt-popup {
+    background: #111111 !important;
+    color: #f1f1f1 !important;
+    border-color: #444444 !important;
+}
+
+.ytt-light-theme .ytt-popup {
+    background: #ffffff !important;
+    color: #0f0f0f !important;
+    border-color: #d8d8d8 !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25) !important;
+}
+
+.ytt-dark-theme .ytt-popup .popup-body,
+.ytt-dark-theme .ytt-popup .popup-body h1,
+.ytt-dark-theme .ytt-popup .popup-body h2,
+.ytt-dark-theme .ytt-popup .popup-body h3,
+.ytt-dark-theme .ytt-popup .popup-body h4,
+.ytt-dark-theme .ytt-popup .popup-body h5,
+.ytt-dark-theme .ytt-popup .popup-body h6,
+.ytt-dark-theme .ytt-popup .popup-body p,
+.ytt-dark-theme .ytt-popup .popup-body li {
+    color: #f1f1f1 !important;
+}
+
+.ytt-light-theme .ytt-popup .popup-body,
+.ytt-light-theme .ytt-popup .popup-body h1,
+.ytt-light-theme .ytt-popup .popup-body h2,
+.ytt-light-theme .ytt-popup .popup-body h3,
+.ytt-light-theme .ytt-popup .popup-body h4,
+.ytt-light-theme .ytt-popup .popup-body h5,
+.ytt-light-theme .ytt-popup .popup-body h6,
+.ytt-light-theme .ytt-popup .popup-body p,
+.ytt-light-theme .ytt-popup .popup-body li {
+    color: #0f0f0f !important;
+}
+
+.ytt-dark-theme .ytt-popup .popup-body a {
+    color: #8ab4f8 !important;
+}
+
+.ytt-light-theme .ytt-popup .popup-body a {
+    color: #065fd4 !important;
+}
+
+.ytt-light-theme .ytt-popup > .tab-menu-btn {
+    color: #0f0f0f !important;
+    filter: none !important;
+}
+
+.ytt-dark-theme .ytt-popup > .tab-menu-btn {
+    color: #f1f1f1 !important;
+    filter: none !important;
+}
+
+
+/* YouTube Tabs fixed: reliable top-button tooltip. The earlier CSS pseudo tooltip
+   could inherit button filters and could render as an empty tiny bubble. */
+.badge-header-controls .btn::after {
+    content: none !important;
+    display: none !important;
+}
+
+.badge-header-controls .btn {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+.ytt-header-button-tooltip {
+    position: fixed;
+    z-index: 2147483647;
+    pointer-events: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(28, 28, 28, 0.98);
+    color: #f1f1f1;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2px);
+    transition: opacity 0.08s ease, transform 0.08s ease, visibility 0.08s ease;
+}
+
+.ytt-header-button-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.ytt-light-theme .ytt-header-button-tooltip {
+    background: rgba(255, 255, 255, 0.98);
+    color: #0f0f0f;
+    border-color: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ytt-dark-theme .ytt-header-button-tooltip {
+    background: rgba(28, 28, 28, 0.98);
+    color: #f1f1f1;
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* YouTube Tabs fixed test9: stronger light/dark theme handling.
+   YouTube can leave extension controls with the wrong icon color after a live
+   theme switch, so use both our class and YouTube's html[dark] attribute. */
+html:not([dark]) .badge-header-controls > .btn,
+body.ytt-light-theme .badge-header-controls > .btn,
+html:not([dark]) .tab-menu-btn,
+body.ytt-light-theme .tab-menu-btn,
+html:not([dark]) .badge-menu-btn,
+body.ytt-light-theme .badge-menu-btn,
+html:not([dark]) .badge-retractor::after,
+body.ytt-light-theme .badge-retractor::after {
+    filter: brightness(0) !important;
+    -webkit-filter: brightness(0) !important;
+    opacity: 0.92 !important;
+}
+
+html:not([dark]) .badge-header-controls > .btn:hover,
+body.ytt-light-theme .badge-header-controls > .btn:hover,
+html:not([dark]) .tab-menu-btn:hover,
+body.ytt-light-theme .tab-menu-btn:hover,
+html:not([dark]) .badge-menu-btn:hover,
+body.ytt-light-theme .badge-menu-btn:hover {
+    filter: brightness(0) opacity(0.72) !important;
+    -webkit-filter: brightness(0) opacity(0.72) !important;
+}
+
+html[dark] .badge-header-controls > .btn,
+body.ytt-dark-theme .badge-header-controls > .btn,
+html[dark] .tab-menu-btn,
+body.ytt-dark-theme .tab-menu-btn,
+html[dark] .badge-menu-btn,
+body.ytt-dark-theme .badge-menu-btn,
+html[dark] .badge-retractor::after,
+body.ytt-dark-theme .badge-retractor::after {
+    filter: brightness(0) invert(1) !important;
+    -webkit-filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+}
+
+html[dark] .badge-header-controls > .btn:hover,
+body.ytt-dark-theme .badge-header-controls > .btn:hover,
+html[dark] .tab-menu-btn:hover,
+body.ytt-dark-theme .tab-menu-btn:hover,
+html[dark] .badge-menu-btn:hover,
+body.ytt-dark-theme .badge-menu-btn:hover {
+    filter: brightness(0) invert(1) opacity(0.78) !important;
+    -webkit-filter: brightness(0) invert(1) opacity(0.78) !important;
+}
+
+/* Keep the custom tooltip readable in both themes; dark tooltip stands out on
+   YouTube light mode and matches the native YouTube tooltip feel. */
+.ytt-header-button-tooltip,
+html:not([dark]) .ytt-header-button-tooltip,
+body.ytt-light-theme .ytt-header-button-tooltip,
+html[dark] .ytt-header-button-tooltip,
+body.ytt-dark-theme .ytt-header-button-tooltip {
+    background: rgba(28, 28, 28, 0.98) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.38) !important;
+}
+
+html:not([dark]) .tab-menu-name,
+body.ytt-light-theme .tab-menu-name {
+    color: #0f0f0f !important;
+}
+
+html[dark] .tab-menu-name,
+body.ytt-dark-theme .tab-menu-name {
+    color: #ffffff !important;
+}
+
+/* YouTube Tabs Fixed 2.0.22: reliable About/help popup close button. */
+.ytt-popup .ytt-popup-close {
+    pointer-events: auto !important;
+    user-select: none !important;
+}
+
+.ytt-dark-theme .ytt-popup .ytt-popup-close {
+    color: #f1f1f1 !important;
+}
+
+.ytt-light-theme .ytt-popup .ytt-popup-close {
+    color: #0f0f0f !important;
+}
+
+.ytt-popup .ytt-popup-close:hover {
+    opacity: 0.85;
+}
+
+
+/* YouTube Tabs Fixed 2.0.22: smaller About/help close button polish. */
+.ytt-popup .ytt-popup-close {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 20px !important;
+    line-height: 22px !important;
+    padding: 0 !important;
+}
+
+
+/* Keep modal editors and subscription choosers above YouTube's veil. */
+.tab-menu-btn, .hover-zone { position: relative; z-index: 3; }
+.new-badge-popup .exit { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; padding: 0; border: 0; background: transparent; color: var(--yt-spec-text-primary, #fff); font-size: 22px; line-height: 22px; cursor: pointer; z-index: 2; }
+.new-badge-popup .exit:hover { opacity: .75; }
+
+
+/* 2.0.28: the visible fly-out must itself be the clickable target, above
+   the native channel row rather than a negative-z-index backdrop. */
+.badge { position: relative; }
+.badge > .badge-retractor {
+    left: 100%;
+    width: 36px;
+    z-index: 4;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    cursor: pointer;
+}
+.badge.ytt-badge-controls-visible > .badge-retractor {
+    width: 36px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.badge > .badge-retractor::after { pointer-events: none; }
+
+
+/* 2.0.29: body-level action button bypasses YouTube guide hit-test layers. */
+body > .badge-retractor.ytt-floating-retractor {
+    position: fixed !important;
+    width: 36px !important;
+    z-index: 2147483647 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid var(--yt-spec-10-percent-layer, #555);
+    background: var(--yt-spec-base-background, #212121);
+    transition: none;
+}
+body > .badge-retractor.ytt-floating-retractor::after {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none;
+}
